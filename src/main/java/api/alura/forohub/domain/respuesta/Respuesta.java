@@ -2,10 +2,7 @@ package api.alura.forohub.domain.respuesta;
 import api.alura.forohub.domain.topico.Topico;
 import api.alura.forohub.domain.usuario.Usuario;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
@@ -37,6 +34,19 @@ public class Respuesta {
         this.fecha = fecha;
         this.autor = autor;
     }
+
+    public void actualizarDatos(Respuesta detalles) {
+        if (detalles.getMensaje() != null) {
+            this.mensaje = detalles.getMensaje();
+        }
+        if (detalles.getTopico() != null) {
+            this.topico = detalles.getTopico();
+        }
+        if (detalles.getAutor() != null) {
+            this.autor = detalles.getAutor();
+        }
+    }
+
 
     public Long getId() {
         return id;

@@ -4,10 +4,8 @@ import api.alura.forohub.domain.curso.Curso;
 import api.alura.forohub.domain.respuesta.Respuesta;
 import api.alura.forohub.domain.usuario.Usuario;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -50,6 +48,25 @@ public class Topico {
         this.curso = curso;
         this.respuestas = respuestas;
     }
+
+    public void actualizarDatos(Topico detalles) {
+        if (detalles.getTitulo() != null) {
+            this.titulo = detalles.getTitulo();
+        }
+        if (detalles.getMensaje() != null) {
+            this.mensaje = detalles.getMensaje();
+        }
+        if (detalles.getStatus() != null) {
+            this.status = detalles.getStatus();
+        }
+        if (detalles.getAutor() != null) {
+            this.autor = detalles.getAutor();
+        }
+        if (detalles.getCurso() != null) {
+            this.curso = detalles.getCurso();
+        }
+    }
+
 
     public Long getId() {
         return id;
